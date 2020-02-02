@@ -17,5 +17,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			copyTokenButton.classList.add( 'displayNone' );
 			document.getElementById( 'successMsg' ).classList.remove( 'displayNone' );
 		} );
+		chrome.tabs.executeScript( null, {
+			code: "window.getSelection().removeAllRanges();"
+		} );
 	}, false );
 }, false );

@@ -2,7 +2,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	var copyTokenButton = document.getElementById( 'copyTokenButton' );
 	copyTokenButton.addEventListener( 'click', function () {
 		chrome.tabs.executeScript( null, {
-			code: "window.getSelection().toString();"
+			code: "document.execCommand('selectAll'); window.getSelection().toString();"
 		}, function ( selection ) {
 			var accessToken = JSON.parse( selection[ 0 ] )[ 'access_token' ];
 			console.log( accessToken );
